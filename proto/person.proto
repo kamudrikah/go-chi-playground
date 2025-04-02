@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package person;
+option go_package = "github.com/mudrikah/go-chi-playground/proto";
+
+// Person service definition
+service PersonService {
+  // GetPerson returns a person with name and age
+  rpc GetPerson (GetPersonRequest) returns (Person) {}
+}
+
+// Request message for getting a person
+message GetPersonRequest {
+  string name = 1;
+}
+
+// Person message containing name and age
+message Person {
+  string name = 1;
+  int32 age = 2;
+} 
